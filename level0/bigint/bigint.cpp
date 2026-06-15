@@ -28,9 +28,6 @@ int bigint::toInt() const{
     return std::atoi(val.c_str());
 }
 
-std::string bigint::getVal() const{
-    return val;
-}
 
 // --- Addition ---
 bigint bigint::operator+(const bigint& rhs) const{
@@ -57,6 +54,7 @@ bigint& bigint::operator+=(const bigint& rhs){
     *this = *this + rhs;
     return *this;
 }
+
 
 // --- Increments ---
 bigint& bigint::operator++(){
@@ -93,7 +91,7 @@ bigint& bigint::operator>>=(unsigned int n){
     return *this;
 }
 
-// --- Shifts (Bigint reuse) ---
+// --- Shifts (Bigint reuse) ---  ???????
 bigint bigint::operator<<(const bigint& rhs) const{ return *this << rhs.toInt(); }
 bigint bigint::operator>>(const bigint& rhs) const{ return *this >> rhs.toInt(); }
 bigint& bigint::operator<<=(const bigint& rhs){ *this = *this << rhs.toInt(); return *this; }
@@ -116,6 +114,12 @@ bool bigint::operator!=(const bigint& rhs) const{ return !(*this == rhs); }
 bool bigint::operator>(const bigint& rhs) const{ return rhs < *this; }
 bool bigint::operator<=(const bigint& rhs) const{ return !(rhs < *this); }
 bool bigint::operator>=(const bigint& rhs) const{ return !(*this < rhs); }
+
+
+
+std::string bigint::getVal() const{
+    return val;
+}
 
 // --- Ostream ---
 std::ostream& operator<<(std::ostream& os, const bigint& obj){
