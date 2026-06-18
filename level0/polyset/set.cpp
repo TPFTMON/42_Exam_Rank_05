@@ -1,7 +1,7 @@
 #include "set.hpp"
 
 // Must initialize reference in the initializer list
-set::set(searchable_bag& s_bag) : _bag(s_bag) {}
+set::set(searchable_bag& other_s_bag) : _bag(other_s_bag) {}
 
 set::~set() {}
 

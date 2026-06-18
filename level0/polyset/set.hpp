@@ -12,7 +12,7 @@ class set {
         set& operator=(const set& other);
 
     public:
-        set(searchable_bag& s_bag);
+        set(searchable_bag& other_s_bag);
         ~set();
 
         bool has(int value) const;
