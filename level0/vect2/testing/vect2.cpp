@@ -13,28 +13,28 @@ const int& vect2::operator[](int index) const { return v[index]; }
 
 
 // --- Compound Assignments ---
-vect2& vect2::operator+=(const vect2& rhs){
-    v[0] += rhs[0];
-    v[1] += rhs[1];
+vect2& vect2::operator+=(const vect2& other){
+    v[0] += other[0];
+    v[1] += other[1];
     return *this;
 }
 
-vect2& vect2::operator-=(const vect2& rhs){
-    v[0] -= rhs[0];
-    v[1] -= rhs[1];
+vect2& vect2::operator-=(const vect2& other){
+    v[0] -= other[0];
+    v[1] -= other[1];
     return *this;
 }
 
 // (Smartly reusing compound assignments)
-vect2 vect2::operator+(const vect2& rhs) const{
+vect2 vect2::operator+(const vect2& other) const{
     vect2 tmp(*this);
-    tmp += rhs;
+    tmp += other;
     return tmp;
 }
 
-vect2 vect2::operator-(const vect2& rhs) const{
+vect2 vect2::operator-(const vect2& other) const{
     vect2 tmp(*this);
-    tmp -= rhs;
+    tmp -= other;
     return tmp;
 }
 
@@ -85,22 +85,22 @@ vect2 vect2::operator-() const{ return vect2(-v[0], -v[1]); }
 
 
 // --- Comparisons ---
-bool vect2::operator==(const vect2& rhs) const{
-    return (v[0] == rhs[0] && v[1] == rhs[1]);
+bool vect2::operator==(const vect2& other) const{
+    return (v[0] == other[0] && v[1] == other[1]);
 }
 
-bool vect2::operator!=(const vect2& rhs) const{
-    return !(*this == rhs); // Smart reuse
+bool vect2::operator!=(const vect2& other) const{
+    return !(*this == other); // Smart reuse
 }
 
 
 
 // --- Non-Member Functions ---
-vect2 operator*(int scalar, const vect2& rhs){
-    return rhs * scalar; // Smart reuse of member operator*(int)
+vect2 operator*(int scalar, const vect2& other){
+    return other * scalar; // Smart reuse of member operator*(int)
 }
 
-std::ostream& operator<<(std::ostream& os, const vect2& rhs){
-    os << "{" << rhs[0] << ", " << rhs[1] << "}"; // Fixed bug, uses os
+std::ostream& operator<<(std::ostream& os, const vect2& other){
+    os << "{" << other[0] << ", " << other[1] << "}"; // Fixed bug, uses os
     return os;
 }

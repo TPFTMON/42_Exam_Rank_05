@@ -2,6 +2,7 @@
 #include "searchable_tree_bag.hpp"
 #include "searchable_array_bag.hpp"
 #include "set.hpp"
+#include <cstdlib>
 
 #include <iostream>
 

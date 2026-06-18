@@ -1,0 +1,3 @@
+Last exam I attended was compiling out source code with:
+
+    c++ -Wextra -Wall -Werror -fno-builtin -std=c++98 -Wno-unused-local-typedefs
