@@ -12,7 +12,7 @@ int count_neighbors(char *board, int x, int y, int w, int h){
     int count = 0;
     for (int dy = -1; dy <= 1; dy++){
         for (int dx = -1; dx <= 1; dx++){
-            if (dx == 0 && dy == 0) continue; // Skip the cell itself
+            if (dx == 0 && dy == 0) continue ; // Skip the cell itself
 
             int nx = x + dx;
             int ny = y + dy;
@@ -100,5 +100,5 @@ int main(int ac, char **av){
     free(b1);
     free(b2);
 
-    return 0;
+    return (0);
 }
