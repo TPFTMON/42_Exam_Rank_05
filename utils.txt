@@ -1,3 +1,5 @@
 (17 june 2026) Last exam I attended was compiling out source code with:
+(Obviously level0)
 
     c++ -Wextra -Wall -Werror -fno-builtin -std=c++98 -Wno-unused-local-typedefs
+
