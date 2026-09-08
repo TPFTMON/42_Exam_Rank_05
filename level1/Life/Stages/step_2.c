@@ -24,14 +24,31 @@ int main(int ac, char const *av[]){
     // Allocate 1D boards
     char *b1 = malloc(w * h);
     char *b2 = malloc(w * h);
+    if (!b1 || !b2) return (1);
 
     // Initialize boards to spaces
     for (int i = 0; i < w * h; i++){
-        b1[i] = '.';
-        b2[i] = '.';
+        b1[i] = ' ';
+        b2[i] = ' ';
     }
 
     // Parse input and draw
+    char buf;
+    int x = 0, y = 0, pen = 0;
+    while (read(STDIN_FILENO, &buf, 1) == 1){
+        int valid_cmd = 1;
+
+        if (buf == 'w' && y > 0) y--;
+        else if (buf == 's' && y < h - 1) y++;
+        else if (buf == 'a' && x > 0) x--;
+        else if (buf == 'd' && x < w -1) x++;
+        else if (buf == 'x') pen = !pen;
+        else valid_cmd = 0;
+
+        if (pen && valid_cmd){
+            b1[idx(x, y, w)] = 'O';
+        }
+    }
 
 
     // Run the Game of Life iterations
