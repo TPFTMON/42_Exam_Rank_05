@@ -1,0 +1,23 @@
+Assignment name  : life
+Expected files   : life.c
+Allowed functions: read, write, malloc, free, atoi, putchar
+
+Write a program that takes three command-line arguments representing the width, height, and number of iterations of a grid, reads cursor movement and drawing commands from standard input, and displays the final state of the board according to Conway's Game of Life.
+
+The universe is a 2D grid of cells, where each cell is either alive ('O') or dead (' '). Every cell interacts with its 8 immediate neighbors (horizontal, vertical, and diagonal). Cells outside the boundaries of the grid are considered dead.
+
+At each step in time (iteration, sometimes called tick), the following transitions occur simultaneously for every cell on the grid:
+
+1. Any live cell with fewer than two live neighbors dies (underpopulation).
+2. Any live cell with two or three live neighbors lives on to the next generation (survival).
+3. Any live cell with more than three live neighbors dies (overpopulation).
+4. Any dead cell with exactly three live neighbors becomes a live cell (reproduction/birth).
+
+Input Handling:
+- The initial position of the cursor starts at coordinate (0, 0).
+- The characters 'w', 'a', 's', 'd' move the cursor up, left, down, and right within the grid boundaries.
+- The character 'x' toggles the pen state (drawing vs. moving).
+- When the pen is active, moving the cursor stamps a live cell ('O') at the target position.
+- Unset positions remain dead cells (' ').
+
+After processing all input commands and running the simulation for the given number of iterations, print the resulting grid to standard output with a newline character at the end of each row.
