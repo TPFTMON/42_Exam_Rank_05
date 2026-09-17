@@ -3,6 +3,6 @@ level0: (17 june 2026) Last exam I attended was compiling our source code with:
     c++ -Wextra -Wall -Werror -fno-builtin -std=c++98 -Wno-unused-local-typedefs
 
 
-level1: (10 september 2026) Last exam I attended was compiling out source code for correction with:
+level1: (10 september 2026) Last exam I attended was compiling our source code for correction with:
 
     cc -Wall -Wextra -Werror -fno-builtin
